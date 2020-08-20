@@ -1,0 +1,223 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>booking</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; 
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; 
+  flex: 50%;
+}
+.col-50 {
+  -ms-flex: 50%; 
+  flex: 50%;
+}
+
+.col-55 {
+  -ms-flex: 55%; 
+  flex: 55%;
+}
+
+.col-75 {
+  -ms-flex: 75%;
+    flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-60,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text],select{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.input select {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=date] {
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+.btn {
+	background-color:#06F;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+  
+}
+
+.btn:hover {
+  background-color: #03F;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Checkout</h2>
+
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+            
+        <div class="row">
+          <div class="col-50">
+            <h3>Alamat Penagihan</h3>
+            <label for="fname"><i class="fa fa-user"></i> Nama Lengkap</label>
+            <input type="text" id="fname" name="firstname" placeholder="Nama anda">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="Masukan Email">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Alamat</label>
+            <input type="text" id="adr" name="address" placeholder="Alamat rumah">
+            <label for="city"><i class="fa fa-institution"></i> Kota</label>
+            <input type="text" id="city" name="city" placeholder="Kota">
+
+            <div class="row">
+              <div class="col-75">
+                <label for="tgl masuk">Tgl Masuk</label>
+                <input type="date" id="state" name="Tgl Masuk">
+              </div>
+              <div class="col-75">
+                <label for="tgl keluar">Tgl Keluar</label>
+                <input type="date" id="zip" name="zip" placeholder="tgl keluar">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Pembayaran</h3>
+          
+         <label for="accepted cards">Accepted Cards</label>
+            <select name="Bank">
+            <option value="Pilih Bank">Pilih Bank</option>
+            
+            <option value="BNI">BNI</option>
+            <option value="BRI">BRI</option>
+            <option value="BCA">BCA</option>
+            <option value="MANDIRI">MANDIRI</option>
+            <option value="BTN">BTN</option>
+            <option value="DANAMON">DANAMON</option>
+            <option value="CIMB NIAGA">CIMB NIAGA</option>
+            </select>
+            <label for="cname">Name di kartu</label>
+            <input type="text" id="cname" name="cardname" placeholder="Nama di kartu">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="Batas bulan (september)">
+            <div class="row">
+             <div class="col-50">
+             
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="000">
+                 </div>
+                 <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="Batas tahun (2021)">
+              </div> 
+      
+              </div>
+            </div>
+          </div>
+          
+     
+        <label>
+      
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing<br/>
+             
+            <h2>Rp.500.000</h2>
+            
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
